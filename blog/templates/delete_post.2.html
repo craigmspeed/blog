@@ -1,0 +1,14 @@
+{% import "macros.html" as macros %}
+{% extends "base.html" %}
+{% block content %}
+
+{{ macros.render_post(post) }}
+<h1>
+    Are you sure you want to delete {{ post.title }} ?
+</h1>
+<form role="form" method="POST">
+
+    <button type="submit" name = "delete_button" class="btn btn-default" value="Yes">Delete</button><button type="submit" name = "delete_button" class="btn btn-default" value="No">Keep</button>
+</form>
+
+{% endblock %}

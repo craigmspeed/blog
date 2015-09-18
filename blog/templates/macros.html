@@ -5,11 +5,21 @@
             <li>
                 {{ post.datetime | dateformat("%d/%m/%y") }}
             </li>
+            <li>
+                <a href="{{url_for('edit_posts_get', post_id=post.id) }}">Edit</a>
+            </li>
+            <li>
+                <a href="{{url_for('delete_post_get', post_id=post.id) }}">Delete</a>
+
+            </li>
         </ul>
     </div>
     <div class="col-md-10">
         <h1>
-            {{ post.title }}
+            <a href="{{ url_for('single_posts', post_id=post.id) }}">{{ post.title }}</a>
+            
+            
+          
         </h1>
         {{ post.content | safe }}
     </div>
